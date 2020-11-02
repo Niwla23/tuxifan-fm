@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<h2>{{ path }}</h2>
+<table border="1" class="files" style="width:100%">
+	<tr>
+		<th>Type</th>
+		<th>Name</th>
+		<th>Item Count / Size</th>
+	</tr>
+	{% for folder in folders %}
+	<tr>
+		<td width="10%">{{folder.filetype}}</td>
+		<td><a href="{{folder.link}}">{{folder.filename}}</a></td>
+		<td>{{folder.size}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}
